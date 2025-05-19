@@ -8,14 +8,14 @@ interface BannerImageProps {
 
 const BannerImage = ({ src, alt }: BannerImageProps) => {
   return (
-    <div className={styles.bannerImage}>
+    <figure className={styles.bannerImage}>
       <Image
         src={src}
         alt={alt}
         fill
         className={styles.bannerImg}
       />
-    </div>
+    </figure>
   )
 }
 
@@ -28,7 +28,7 @@ export default function Banner() {
   ]
 
   return (
-    <div className={styles.bannerContainer}>
+    <section className={styles.bannerContainer} aria-label="Banners">
       {bannerImages.map((image) => (
         <BannerImage
           key={image.src}
@@ -36,6 +36,6 @@ export default function Banner() {
           alt={image.alt}
         />
       ))}
-    </div>
+    </section>
   )
 }

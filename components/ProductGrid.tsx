@@ -15,15 +15,15 @@ export default function ProductGrid() {
     { id: 8, name: "Producto 8", price: 89.99, image: "/placeholder-ajh58.png" },
   ]
   return (
-    <div className={styles.productGridContainer}>
+    <section className={styles.productGridContainer} aria-label="Listado de productos">
       <h2 className={styles.productGridTitle}>Productos</h2>
-      <div className={styles.productGrid}>
+      <ul className={styles.productGrid}>
         {products.map((product) => (
-          <div key={product.id}>
+          <li key={product.id}>
             <ProductCard product={product} />
-          </div>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   )
 }

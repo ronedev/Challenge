@@ -14,17 +14,19 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <div className={styles.card}>
+    <article className={styles.card}>
       <div className={styles.cardImageContainer}>
         <Image src={product.image || "/placeholder.svg"} alt={product.name} fill className={styles.cardImage} />
       </div>
       <div className={styles.cardContent}>
-        <h3 className={styles.cardTitle}>{product.name}</h3>
+        <header>
+          <h3 className={styles.cardTitle}>{product.name}</h3>
+        </header>
         <div className={styles.cardFooter}>
           <span className={styles.cardPrice}>${product.price}</span>
           <button className={styles.cardButton}>Añadir</button>
         </div>
       </div>
-    </div>
+    </article>
   )
 }
