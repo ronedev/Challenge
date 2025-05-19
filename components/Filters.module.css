@@ -1,0 +1,64 @@
+.filters {
+  background-color: #f9f9f9;
+  padding: 15px 10px;
+  border: 1px solid #eee;
+  margin-top: 20px;
+  width: 230px;
+}
+
+.filtersTitle {
+  font-size: 18px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.filtersSection {
+  margin-bottom: 20px;
+}
+
+.filtersSubtitle {
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.filtersList {
+  list-style-type: none;
+  padding-left: 15px;
+}
+
+.filtersLabel {
+  cursor: pointer;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.filtersCheckbox {
+  margin-right: 8px;
+}
+
+.filtersRangeContainer {
+  padding-left: 15px;
+}
+
+.filtersRange {
+  width: 180px;
+}
+
+.filtersRangeLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  width: 180px;
+}
+
+@media (max-width: 900px) {
+  .filters {
+    width: 100%;
+    padding: 10px 5px;
+  }
+  .filtersRange, .filtersRangeLabels {
+    width: 100%;
+  }
+} 

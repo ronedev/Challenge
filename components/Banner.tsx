@@ -1,89 +1,41 @@
 import Image from "next/image"
+import styles from "./Banner.module.css"
+
+interface BannerImageProps {
+  src: string
+  alt: string
+}
+
+const BannerImage = ({ src, alt }: BannerImageProps) => {
+  return (
+    <div className={styles.bannerImage}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className={styles.bannerImg}
+      />
+    </div>
+  )
+}
 
 export default function Banner() {
+  const bannerImages = [
+    { src: "/placeholder-4hkw4.png", alt: "Banner 1" },
+    { src: "/placeholder-gtn3r.png", alt: "Banner 2" },
+    { src: "/placeholder-9hex6.png", alt: "Banner 3" },
+    { src: "/placeholder-216uw.png", alt: "Banner 4" },
+  ]
+
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "200px",
-        backgroundColor: "#f5f5f5",
-        marginTop: "10px",
-        marginBottom: "30px",
-        overflow: "hidden",
-        whiteSpace: "nowrap",
-      }}
-    >
-      <div
-        style={{
-          display: "inline-block",
-          width: "300px",
-          height: "180px",
-          margin: "10px 5px 10px 10px",
-          position: "relative",
-        }}
-      >
-        <Image
-          src="/placeholder-4hkw4.png"
-          alt="Banner 1"
-          width={300}
-          height={180}
-          style={{ borderRadius: "8px" }}
+    <div className={styles.bannerContainer}>
+      {bannerImages.map((image) => (
+        <BannerImage
+          key={image.src}
+          src={image.src}
+          alt={image.alt}
         />
-      </div>
-
-      <div
-        style={{
-          display: "inline-block",
-          width: "300px",
-          height: "180px",
-          margin: "10px 5px",
-          position: "relative",
-        }}
-      >
-        <Image
-          src="/placeholder-gtn3r.png"
-          alt="Banner 2"
-          width={300}
-          height={180}
-          style={{ borderRadius: "8px" }}
-        />
-      </div>
-
-      <div
-        style={{
-          display: "inline-block",
-          width: "300px",
-          height: "180px",
-          margin: "10px 5px",
-          position: "relative",
-        }}
-      >
-        <Image
-          src="/placeholder-9hex6.png"
-          alt="Banner 3"
-          width={300}
-          height={180}
-          style={{ borderRadius: "8px" }}
-        />
-      </div>
-
-      <div
-        style={{
-          display: "inline-block",
-          width: "300px",
-          height: "180px",
-          margin: "10px 10px 10px 5px",
-          position: "relative",
-        }}
-      >
-        <Image
-          src="/placeholder-216uw.png"
-          alt="Banner 4"
-          width={300}
-          height={180}
-          style={{ borderRadius: "8px" }}
-        />
-      </div>
+      ))}
     </div>
   )
 }

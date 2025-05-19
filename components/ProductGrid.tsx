@@ -1,4 +1,6 @@
+"use client"
 import ProductCard from "./ProductCard"
+import styles from "./ProductGrid.module.css"
 
 export default function ProductGrid() {
   // Array de productos de ejemplo
@@ -12,43 +14,12 @@ export default function ProductGrid() {
     { id: 7, name: "Producto 7", price: 79.99, image: "/placeholder-k1s61.png" },
     { id: 8, name: "Producto 8", price: 89.99, image: "/placeholder-ajh58.png" },
   ]
-
   return (
-    <div
-      style={{
-        marginTop: "20px",
-        position: "relative",
-      }}
-    >
-      <h2
-        style={{
-          fontSize: "24px",
-          marginBottom: "20px",
-          marginLeft: "5px",
-        }}
-      >
-        Productos
-      </h2>
-
-      <div
-        style={{
-          display: "block",
-          marginLeft: "-10px",
-          marginRight: "-10px",
-        }}
-      >
+    <div className={styles.productGridContainer}>
+      <h2 className={styles.productGridTitle}>Productos</h2>
+      <div className={styles.productGrid}>
         {products.map((product) => (
-          <div
-            key={product.id}
-            style={{
-              display: "inline-block",
-              width: "220px",
-              marginLeft: "10px",
-              marginRight: "10px",
-              marginBottom: "30px",
-              verticalAlign: "top",
-            }}
-          >
+          <div key={product.id}>
             <ProductCard product={product} />
           </div>
         ))}

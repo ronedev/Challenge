@@ -3,21 +3,22 @@ import Banner from "@/components/Banner"
 import Filters from "@/components/Filters"
 import ProductGrid from "@/components/ProductGrid"
 import Footer from "@/components/Footer"
+import styles from "./page.module.css"
 
 export default function Home() {
   return (
-    <div style={{ width: "100%", overflow: "hidden" }}>
+    <div className={styles.pageWrapper}>
       <Header />
       <Banner />
-      <div style={{ display: "block", position: "relative" }}>
-        <div style={{ float: "left", width: "250px", marginRight: "15px", paddingLeft: "5px" }}>
+      <div className={styles.mainContent}>
+        <div className={styles.filtersContainer}>
           <Filters />
         </div>
-        <div style={{ marginLeft: "240px", paddingRight: "10px" }}>
+        <div className={styles.productsContainer}>
           <ProductGrid />
         </div>
       </div>
-      <div style={{ clear: "both", marginTop: "50px" }}></div>
+      <div className={styles.clearSpace}></div>
       <Footer />
     </div>
   )
